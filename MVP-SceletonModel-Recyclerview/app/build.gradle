@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -37,4 +38,8 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:8.8.1'
     kapt "com.jakewharton:butterknife-compiler:8.8.1"
+}
+
+kapt {
+    generateStubs = true
 }
