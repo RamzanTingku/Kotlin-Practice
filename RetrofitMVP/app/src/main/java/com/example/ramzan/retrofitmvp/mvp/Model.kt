@@ -24,11 +24,6 @@ import org.json.JSONException
 import org.json.JSONObject
 import com.google.gson.Gson
 
-
-
-
-
-
 class Model(var modelInterface: ModelInterface, var context: Context){
 
     var disposable: Disposable? = null
