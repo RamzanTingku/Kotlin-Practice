@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity(), ViewData {
 
     private fun setLinearRecyclerView() {
 
-        Log.d("TestAdaper",""+cvDataList.size)
         customAdapter = CustomAdapter(cvDataList, this)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         recyclerView.adapter = customAdapter
@@ -76,23 +75,33 @@ class MainActivity : AppCompatActivity(), ViewData {
 
     }
 
-    override fun showError(message: String?) {
-        Log.d("TestError",""+message)
-    }
-
-    override fun showPersonInfo(personInfo: PersonInfo) {
-
-        for (cv in personInfo.cv!!){
-            cvDataList.add(cv)
-            customAdapter?.notifyDataSetChanged()
-        }
-
-        Log.d("TestSuccess",""+ (cvDataList[2].name?.personName))
-    }
-
     override fun onPersonInfoSaveSuccess(message: String?) {
 
     }
 
+    override fun showError(message: String?) {
+        Log.d("TestError",""+message)
+    }
+
+    override fun showPersonInfo(personInfo: PersonInfo?) {
+
+        for (cv in personInfo?.cv!!){
+            cvDataList.add(cv)
+            customAdapter?.notifyDataSetChanged()
+        }
+
+        //Log.d("TestSuccess",""+ (cvDataList[2].name?.personName))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        presenter?.onStopFetching()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter?.onStopFetching()
+
+    }
 
 }

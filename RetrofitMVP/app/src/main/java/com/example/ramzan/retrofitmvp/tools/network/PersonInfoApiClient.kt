@@ -10,7 +10,7 @@ class PersonInfoApiClient(){
 
     private var retrofit: Retrofit? = null
 
-    fun getPersonRetrofit(): Retrofit? {
+   fun getPersonRetrofit(): Retrofit? {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
                     .baseUrl(AppConstants.PERSON_INFO_BASE_API_URL)

@@ -22,7 +22,7 @@ class Presenter(var view: ViewData, var context: Context) :  ModelInterface{
     }
 
 
-    override fun onPersonInfoLoadSuccess(personInfo: PersonInfo) {
+    override fun onPersonInfoLoadSuccess(personInfo: PersonInfo?) {
 
         view.stopLoading()
         view.showPersonInfo(personInfo)
@@ -44,6 +44,10 @@ class Presenter(var view: ViewData, var context: Context) :  ModelInterface{
 
         view.stopLoading()
         view.showError(message)
+    }
+
+    override fun onStopFetching() {
+        model.dipose()
     }
 
 }
