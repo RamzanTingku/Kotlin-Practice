@@ -36,7 +36,7 @@ class CustomAdapter() : RecyclerView.Adapter<CustomAdapter.CustomViewHolder>(){
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         var noData = "No Data"
-        val person: Person? = personList.get(position);
+        val person: Person? = personList.get(position)
 
         var name = person?.name ?: noData
         var address = person?.address ?: noData

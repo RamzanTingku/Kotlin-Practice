@@ -8,9 +8,6 @@ import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
-import butterknife.BindView
-import butterknife.ButterKnife
-import com.example.ramzan.recyclerviewpractice.R.id.recyclerView
 import com.example.ramzan.recyclerviewpractice.adapter.CustomAdapter
 import com.example.ramzan.recyclerviewpractice.adapter.PersonAdapter
 import com.example.ramzan.recyclerviewpractice.adapter.PersonClickListener
@@ -50,6 +47,7 @@ class MainActivity : AppCompatActivity(), ViewPerson {
 
                     R.id.textViewAddress -> {
                         Toast.makeText(this@MainActivity,"Clicked: "+(person?.address ?: "No Data"),Toast.LENGTH_LONG).show()
+                        //Toast.makeText(this@MainActivity,""+Constants.TEST,Toast.LENGTH_LONG).show()
                     }
                     R.id.textViewName -> {
                         Toast.makeText(this@MainActivity,"Clicked: "+ (person?.name ?: "No Data"),Toast.LENGTH_LONG).show()
